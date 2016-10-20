@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-
+//import { RouterModule } from '@angular/router';
+import { PostsRoutingModule } from './posts.routing.module';
 
 import { PostService } from './services/post/post.service';
 
@@ -28,15 +28,11 @@ const POSTS_DECLARATIONS = [
     PostListComponent
 ];
 
-/*const routes = [
-  { path: '', component: PostListComponent, pathMatch: 'full' },
-  { path: 'new', component: PostNewComponent, canActivate: [LoggedInGuard] },
-  { path: 'edit/:id', component: PostEditComponent, canActivate: [LoggedInGuard] },
-];*/
+
 
 @NgModule({
   declarations: [POSTS_DECLARATIONS],
-  imports: [CommonModule,FormsModule,ReactiveFormsModule,RouterModule],
+  imports: [CommonModule,FormsModule,ReactiveFormsModule,PostsRoutingModule],
   exports:[POSTS_DECLARATIONS],
   providers: [POSTS_PROVIDERS]
 })
