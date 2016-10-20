@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 import template from './post-list-item.template.html';
-import { UserService } from '../../../auth';
+import { UserService } from '../../../auth/services/user/user.service';
 
 @Component({
   selector: 'post-list-item',

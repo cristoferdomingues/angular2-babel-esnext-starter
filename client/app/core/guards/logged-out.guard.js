@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { UserService } from '../../auth';
+import { UserService } from '../../auth/services/user/user.service';
 
 @Injectable()
 export class LoggedOutGuard {

@@ -8,27 +8,33 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from 'ng2-translate/bundles/ng2-translate';
+import { PostsModule } from './app/posts';
+
+import { AuthModule } from './app/auth';
 
 import { routes } from './app/core/app.routes';
 import { CORE_PROVIDERS, CORE_DECLARATIONS, AppComponent } from './app/core';
-import { AUTH_PROVIDERS, AUTH_DECLARATIONS } from './app/auth';
-import { POSTS_PROVIDERS, POSTS_DECLARATIONS } from './app/posts';
 
 if (ENVIRONMENT === 'production') {
   enableProdMode();
 }
 
 @NgModule({
-  declarations: [CORE_DECLARATIONS, AUTH_DECLARATIONS, POSTS_DECLARATIONS],
+  declarations: [CORE_DECLARATIONS],
   imports: [
-    HttpModule, BrowserModule, FormsModule, ReactiveFormsModule,
+    HttpModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    PostsModule,
+    AuthModule,
     TranslateModule.forRoot(),
     RouterModule.forRoot(routes, {
       useHash: true
     })
   ],
   providers: [
-    CORE_PROVIDERS, AUTH_PROVIDERS, POSTS_PROVIDERS,
+    CORE_PROVIDERS,
     { provide: 'ENVIRONMENT', useValue: ENVIRONMENT }
   ],
   bootstrap: [AppComponent]

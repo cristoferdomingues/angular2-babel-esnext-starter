@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import template from './post-list.template.html';
-import { UserService } from '../../../auth';
+import { UserService } from '../../../auth/services/user/user.service';
 import { PostService } from '../../services/post/post.service';
 
 @Component({

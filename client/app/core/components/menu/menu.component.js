@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import template from './menu.template.html';
-import { UserService } from '../../../auth';
+import { UserService } from '../../../auth/services/user/user.service';
 
 @Component({
   selector: 'top-menu',
